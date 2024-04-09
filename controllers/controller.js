@@ -47,4 +47,10 @@ controller.create = (req,res)=>{
   res.redirect("/");
 }
 
+controller.update = (req,res)=>{
+  console.log(req.body);
+  produtos[req.params.id-1] = req.body;
+  res.send("OK");
+}
+
 module.exports = controller
