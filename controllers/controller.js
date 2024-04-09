@@ -42,4 +42,9 @@ controller.getById = (req,res)=>{
   }
 }
 
+controller.create = (req,res)=>{
+  produtos.push(req.body);
+  res.redirect("/");
+}
+
 module.exports = controller
