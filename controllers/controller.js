@@ -31,4 +31,15 @@ controller.getAll = (req,res)=>{
     res.send(produtos);
 }
 
+controller.getById = (req,res)=>{
+  prod = produtos.find(i => i.id == req.params.id);
+  try {
+    if(prod) {
+      res.send(prod);
+    }
+  } catch(e) {
+    res.send(console.error(`Erro : ${e}`));
+  }
+}
+
 module.exports = controller
