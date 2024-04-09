@@ -53,4 +53,10 @@ controller.update = (req,res)=>{
   res.send("OK");
 }
 
+controller.delete((req,res) => {
+  let id = req.params.id;
+  produtos[id] = null;
+  return res.json(produtos[id]);
+});
+
 module.exports = controller
